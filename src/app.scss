@@ -1,0 +1,19 @@
+@import '../node_modules/sn-stylekit/dist/stylekit.css';
+
+html {
+  font-size: var(--sn-stylekit-base-font-size);
+  background-color: transparent; // to help with seamless transition while loading themes
+}
+
+body {
+  font-family: sans-serif;
+  margin: 35px;
+  color: var(--sn-stylekit-editor-foreground-color);
+  background-color: transparent;
+  font-size: 16px;
+}
+
+* {
+  // To prevent gray flash when focusing input on mobile Safari
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
