@@ -1,5 +1,7 @@
 ## Rich Markdown Editor for Standard Notes
 
+![Sample editor](./images/screenshot.png)
+
 This is an attempt to use Outline's editor into Standard Notes.
 
 Outline uses an awesome Markdown editor, [Rich Markdown Editor](https://github.com/outline/rich-markdown-editor) that fits great with Standard Notes. It is very close to what Bear does on Mac.
