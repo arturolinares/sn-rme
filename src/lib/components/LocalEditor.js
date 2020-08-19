@@ -3,6 +3,20 @@ import { debounce } from "lodash";
 import RichMarkdownEditor from "rich-markdown-editor";
 import BridgeManager from "../BridgeManager";
 
+
+class YoutubeEmbed extends React.Component {
+  render() {
+    const { attrs } = this.props;
+    const videoId = attrs.matches[1];
+
+    return (
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}?modestbranding=1`}
+      />
+    );
+  }
+}
+
 export default class LocalEditor extends React.Component {
   constructor(props){
     super(props);
@@ -11,19 +25,21 @@ export default class LocalEditor extends React.Component {
 
   componentDidMount() {
     BridgeManager.get().addUpdateObserver(() => {
-      let note = BridgeManager.get().getNote();
+      const note = BridgeManager.get().getNote();
+      const refresh = !this.state.note
+        || (this.state.note && this.state.note.uuid != note.uuid);
       this.setState({
         note: BridgeManager.get().getNote(),
       });
-      this.updateMarkdown();
+      if (refresh) {
+        this.updateMarkdown();
+      }
     });
   }
 
   updateMarkdown() {
-    if (!this.state.markdown) {
-      let markdown = this.state.note.content.text;
-      this.setState({ markdown });
-    }
+    let markdown = this.state.note.content.text;
+    this.setState({ markdown });
   }
 
   onChange = debounce((value) => {
@@ -49,6 +65,25 @@ export default class LocalEditor extends React.Component {
           placeholder=""
           autoFocus
           onChange={ this.onChange.bind(this) }
+          embeds={[
+            {
+              title: "YouTube",
+              keywords: "youtube video tube google",
+              icon: () => (
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_squircle_%282017%29.svg"
+                  width={24}
+                  height={24}
+                />
+              ),
+              matcher: url => {
+                return url.match(
+                  /(?:https?:\/\/)?(?:www\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([a-zA-Z0-9_-]{11})$/i
+                );
+              },
+              component: YoutubeEmbed,
+            },
+          ]}
         />
       </div>
     );

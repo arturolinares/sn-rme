@@ -3,6 +3,8 @@
 html {
   font-size: var(--sn-stylekit-base-font-size);
   background-color: transparent; // to help with seamless transition while loading themes
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -16,4 +18,24 @@ body {
 * {
   // To prevent gray flash when focusing input on mobile Safari
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+div.gelrDo {
+  color: var(--sn-stylekit-contrast-foreground-color);
+
+  .heading-name {
+    color: var(--sn-stylekit-contrast-foreground-color);
+  }
+
+  mark {
+    background: #ff0;
+  }
+
+  background-color: transparent;
+}
+
+.App iframe {
+    border-radius: 4px;
+    border: 1px solid #e3e3e3;
+    padding: 7px;
 }

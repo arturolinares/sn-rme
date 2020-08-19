@@ -1,3 +1,21 @@
+## Rich Markdown Editor for Standard Notes
+
+This is an attempt to use Outline's editor into Standard Notes.
+
+Outline uses an awesome Markdown editor, [Rich Markdown Editor](https://github.com/outline/rich-markdown-editor) that fits great with Standard Notes. It is very close to what Bear does on Mac.
+
+This is my first React application, so probably there are a lot of improvements. Feel free to make recommendations and/or open issues.
+
+**Status**
+*What's currenlty working**
+
+- [x] **Editor**. It is possible to edit, save and create new styled notes.
+- [ ] **Links**. Clicking links does nothing yet in the application. (Maybe internal links too?)
+- [ ] **FileSafe**. Implementing FileSafe will allow the editor to embed images.
+- [X] **YouTube Embeds**: Youtube embeds.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
