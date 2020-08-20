@@ -12,7 +12,7 @@ This is my first React application, so probably there are a lot of improvements.
 *What's currenlty working**
 
 - [x] **Editor**. It is possible to edit, save and create new styled notes.
-- [ ] **Links**. Clicking links does nothing yet in the application. (Maybe internal links too?)
+- [x] **Links**. Links work with `cmd/meta+click`.
 - [ ] **FileSafe**. Implementing FileSafe will allow the editor to embed images.
 - [X] **YouTube Embeds**: Youtube embeds.
 
