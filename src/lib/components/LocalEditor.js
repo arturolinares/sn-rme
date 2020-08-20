@@ -1,7 +1,8 @@
 import React from 'react';
 import { debounce } from "lodash";
-import RichMarkdownEditor from "rich-markdown-editor";
+import RichMarkdownEditor, { theme } from "rich-markdown-editor";
 import BridgeManager from "../BridgeManager";
+import light from '../theme';
 
 
 class YoutubeEmbed extends React.Component {
@@ -65,6 +66,7 @@ export default class LocalEditor extends React.Component {
           placeholder=""
           autoFocus
           onChange={ this.onChange.bind(this) }
+          theme={light}
           embeds={[
             {
               title: "YouTube",
