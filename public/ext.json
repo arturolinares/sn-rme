@@ -1,6 +1,6 @@
 {
-  "identifier": "org.github.arturolinares.sn-rme",
-  "name": "Rich Markdown Editor",
+  "identifier": "org.github.arturolinares.sn-rme-dev",
+  "name": "Rich Markdown Editor (DEV)",
   "content_type": "SN|Component",
   "area": "editor-editor",
   "version": "1.0.0",

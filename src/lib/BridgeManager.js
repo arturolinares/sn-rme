@@ -58,6 +58,9 @@ export default class BridgeManager {
       // you modify it in the presave block, it may not be the same object anymore, so the presave values will not be applied to
       // the right object, and it will save incorrectly.
       let note = this.note;
+      if (note.content && note.content.text) {
+        note.content.text = note.content.text.replace(/\n\\/g, '\n');
+      }
       this.componentManager.saveItemWithPresave(note, () => {
         note = this.note ;
       });
