@@ -41,6 +41,9 @@ export default class LocalEditor extends React.Component {
   updateMarkdown() {
     let markdown = this.state.note.content.text
       .replace(/(\n{2})(\n+)/g, (m, p, q) => p + q.replace(/(\n)/g, '\\$1'));
+    if (markdown == "") {
+      markdown = "\n";
+    }
     this.setState({ markdown });
   }
 
