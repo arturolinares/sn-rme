@@ -26,3 +26,7 @@ body {
     padding: 10px;
     background-color: var(--sn-stylekit-secondary-background-color);
 }
+
+.App .scrollable-wrapper .scrollable {
+    overflow-x: auto;
+}
