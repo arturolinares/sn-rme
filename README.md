@@ -9,7 +9,7 @@ Outline uses an awesome Markdown editor, [Rich Markdown Editor](https://github.c
 This is my first React application, so probably there are a lot of improvements. Feel free to make recommendations and/or open issues.
 
 **Status**
-*What's currenlty working**
+*What's currently working**
 
 - [x] **Editor**. It is possible to edit, save and create new styled notes.
 - [x] **Links**. Links work with `cmd/meta+click`.
