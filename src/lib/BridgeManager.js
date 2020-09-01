@@ -46,10 +46,6 @@ export default class BridgeManager {
       this.note = item;
       this.notifyObserversOfUpdate();
     })
-
-    this.componentManager.streamItems(["SN|Component", "SN|Theme", "SF|Extension"], (items) => {
-      this.items = items.filter((item) => {return !item.isMetadataUpdate});
-    });
   }
 
   save() {
