@@ -1,6 +1,6 @@
 {
   "name": "sn-rme",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "homepage": ".",
   "private": true,
   "dependencies": {
@@ -13,7 +13,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
-    "rich-markdown-editor": "^10.6.1",
+    "rich-markdown-editor": "^10.6.7",
     "sn-components-api": "^1.2.8",
     "sn-stylekit": "^2.1.0"
   },

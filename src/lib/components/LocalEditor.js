@@ -1,8 +1,8 @@
 import React from 'react';
 import { debounce } from "lodash";
-import RichMarkdownEditor, { theme } from "rich-markdown-editor";
+import RichMarkdownEditor from "rich-markdown-editor";
 import BridgeManager from "../BridgeManager";
-import light from '../theme';
+import theme from '../theme';
 
 
 class YoutubeEmbed extends React.Component {
@@ -12,6 +12,7 @@ class YoutubeEmbed extends React.Component {
 
     return (
       <iframe
+        title={`Youtube Embed ${videoId}`}
         src={`https://www.youtube.com/embed/${videoId}?modestbranding=1`}
       />
     );
@@ -28,7 +29,7 @@ export default class LocalEditor extends React.Component {
     BridgeManager.get().addUpdateObserver(() => {
       const note = BridgeManager.get().getNote();
       const refresh = !this.state.note
-        || (this.state.note && this.state.note.uuid != note.uuid);
+        || (this.state.note && this.state.note.uuid !== note.uuid);
       this.setState({
         note: BridgeManager.get().getNote(),
       });
@@ -41,7 +42,7 @@ export default class LocalEditor extends React.Component {
   updateMarkdown() {
     let markdown = this.state.note.content.text
       .replace(/(\n{2})(\n+)/g, (m, p, q) => p + q.replace(/(\n)/g, '\\$1'));
-    if (markdown == "") {
+    if (markdown === "") {
       markdown = "\n";
     }
     this.setState({ markdown });
@@ -70,13 +71,14 @@ export default class LocalEditor extends React.Component {
           placeholder=""
           autoFocus
           onChange={ this.onChange.bind(this) }
-          theme={light}
+          theme={theme}
           embeds={[
             {
               title: "YouTube",
               keywords: "youtube video tube google",
               icon: () => (
                 <img
+                  alt="Youtube Logo"
                   src="https://upload.wikimedia.org/wikipedia/commons/7/75/YouTube_social_white_squircle_%282017%29.svg"
                   width={24}
                   height={24}
