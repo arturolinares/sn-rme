@@ -72,6 +72,7 @@ export default class LocalEditor extends React.Component {
           autoFocus
           onChange={ this.onChange.bind(this) }
           theme={theme}
+          className="gKsMQS"
           embeds={[
             {
               title: "YouTube",
