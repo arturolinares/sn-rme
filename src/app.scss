@@ -9,7 +9,7 @@ html {
 
 body {
   font-family: sans-serif;
-  margin: 35px;
+  margin: 10px 35px 0px 35px;
   // color: var(--sn-stylekit-editor-foreground-color);
   background-color: transparent;
   font-size: 16px;
@@ -32,5 +32,23 @@ body {
   }
   .gKsMQS li p:first-child {
     word-break: break-word;
+  }
+
+  /* If the first entry in the document is a header, then we want to remove the large header top
+  margin. This is a little tricky, as the first immediate element when that situation occurs
+  is a hidden <a> element. We want to be able to say with css "give me the first adjacent sibling
+  pair of a + h1, but only if it is the very first pair of children under the main panel",
+  but that doesn't seem to be directly possible.
+  https://stackoverflow.com/a/14892952
+
+  We can get a fairly good approximation to just set the margin-top of the second element to 0px.
+  If it is anything other than a header, it has a 0px margin-top anyway.
+   */
+  .gKsMQS {
+    .ProseMirror {
+      :nth-child(2) {
+        margin-top: 0px
+      }
+    }
   }
 }
