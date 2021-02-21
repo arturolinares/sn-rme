@@ -23,6 +23,11 @@ export default class LocalEditor extends React.Component {
   constructor(props){
     super(props);
     this.state = {};
+    this.editor = null;
+
+    this.setEditorRef = (el) => {
+      this.editor = el;
+    }
   }
 
   componentDidMount() {
@@ -67,12 +72,30 @@ export default class LocalEditor extends React.Component {
     return (
       <div>
         <RichMarkdownEditor
+          ref={this.setEditorRef}
           value={ this.state.markdown }
           placeholder=""
           autoFocus
           onChange={ this.onChange.bind(this) }
           theme={theme}
           className="gKsMQS"
+
+          onSearchLink={searchTerm => {
+            const results = this.editor.getHeadings();
+
+            return results.map(result => {
+              return { title: result.title, subtitle: `H${result.level}`, url: '#' + result.id };
+            }).filter(result => result.title.match(searchTerm));
+          }}
+
+          onClickLink={(href, event) => {
+            if (href.match(/^#/)) {
+              this.editor.scrollToAnchor(href);
+            } else {
+              window.open(href, "_blank");
+            }
+          }}
+
           embeds={[
             {
               title: "YouTube",
