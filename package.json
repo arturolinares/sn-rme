@@ -13,10 +13,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
-    "rich-markdown-editor": "^11.0",
+    "rich-markdown-editor": "^11.3.1",
     "sn-components-api": "^1.2.8",
-    "styled-components": "^5.1.0",
-    "sn-stylekit": "^2.1.0"
+    "sn-stylekit": "^2.1.0",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
