@@ -22,10 +22,8 @@ body {
 
 .App {
   iframe {
-    border-radius: var(--sn-stylekit-general-border-radius);
-    border: 1px solid var(--sn-stylekit-secondary-foreground-color);
-    padding: 10px;
-    background-color: var(--sn-stylekit-secondary-background-color);
+    border: none;
+    border-radius: 4px;
   }
   .scrollable-wrapper .scrollable {
       overflow-x: auto;

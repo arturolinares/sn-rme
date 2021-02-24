@@ -1,9 +1,20 @@
 import React from 'react';
 import { debounce } from "lodash";
 import RichMarkdownEditor from "rich-markdown-editor";
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 import BridgeManager from "../BridgeManager";
 import theme from '../theme';
 
+class TwitterEmbed extends React.Component {
+  render() {
+    const { attrs } = this.props;
+    const statusId = attrs.matches[1];
+
+    return (
+      <TwitterTweetEmbed tweetId={statusId} placeholder={"Loading tweet..."}/>
+    );
+  }
+}
 
 class YoutubeEmbed extends React.Component {
   render() {
@@ -97,6 +108,14 @@ export default class LocalEditor extends React.Component {
           }}
 
           embeds={[
+            {
+              title: "Twitt",
+              keywords: "twitter tw",
+              matcher: url => {
+                return url.match(/^https?:\/\/twitter.com\/[\d\w_-]+\/status\/(\d+)/);
+              },
+              component: TwitterEmbed
+            },
             {
               title: "YouTube",
               keywords: "youtube video tube google",
