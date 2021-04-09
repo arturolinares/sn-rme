@@ -1,6 +1,6 @@
 {
   "name": "sn-rme",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "homepage": ".",
   "private": true,
   "dependencies": {
@@ -10,14 +10,14 @@
     "filesafe-embed": "^1.0.10",
     "filesafe-js": "^1.0.4",
     "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
     "react-twitter-embed": "^3.0.3",
-    "rich-markdown-editor": "^11.3.1",
+    "rich-markdown-editor": "^11.6.4",
     "sn-components-api": "^1.2.8",
-    "sn-stylekit": "^2.1.0",
-    "styled-components": "^5.1.0"
+    "sn-stylekit": "^2.2.1",
+    "styled-components": "^5.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
