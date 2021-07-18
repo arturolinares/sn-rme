@@ -109,8 +109,16 @@ export default class LocalEditor extends React.Component {
 
           embeds={[
             {
-              title: "Twitt",
-              keywords: "twitter tw",
+              title: "Twitter",
+              keywords: "twitter tw tweet",
+              icon: () => (
+                  <img
+                      alt="Twitter Logo"
+                      src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Twitter_Logo.png"
+                      width={24}
+                      height={24}
+                  />
+              ),
               matcher: url => {
                 return url.match(/^https?:\/\/twitter.com\/[\d\w_-]+\/status\/(\d+)/);
               },
