@@ -32,7 +32,6 @@ https://listed.to/p/K6AXOLFLF6
 
 1. Install the dependencies with `npm install`.
 2. Use `npm run start` to start the development editor.
-3. In Standard Notes, install the extension at `https://localhost:3000/ext.json`. The name of this extension will be *Rich Markdown Editor (DEV)*.
+3. In Standard Notes, install the extension at `http://localhost:3000/ext.json`. The name of this extension will be *Rich Markdown Editor (DEV)*.
 4. To use it on a note, activate it normally using the *Editor* menu.
 5. To build a new version, run `npm run build`.
-
