@@ -1,6 +1,6 @@
 {
   "name": "sn-rme",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "homepage": ".",
   "private": true,
   "dependencies": {
@@ -14,7 +14,7 @@
     "react-dom": "^16.14.0",
     "react-scripts": "3.4.3",
     "react-twitter-embed": "^3.0.3",
-    "rich-markdown-editor": "^11.6.4",
+    "rich-markdown-editor": "^11.17.0",
     "sn-components-api": "^1.2.8",
     "sn-stylekit": "^2.2.1",
     "styled-components": "^5.2.3"
