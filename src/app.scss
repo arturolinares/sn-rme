@@ -43,6 +43,9 @@ body {
   If it is anything other than a header, it has a 0px margin-top anyway.
    */
   .gKsMQS {
+    .heading-actions {
+      background: var(--sn-stylekit-background-color);
+    }
     .ProseMirror {
       :nth-child(2) {
         margin-top: 0px

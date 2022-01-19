@@ -100,8 +100,9 @@ export default class LocalEditor extends React.Component {
           }}
 
           onClickLink={(href, event) => {
-            if (href.match(/^#/)) {
-              this.editor.scrollToAnchor(href);
+            let url = new URL(href);
+            if (url.pathname == '/' && url.hash.length > 0) {
+              this.editor.scrollToAnchor(url.hash);
             } else {
               window.open(href, "_blank");
             }
